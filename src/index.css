@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-link{
+  margin-left: 40px;
+}
+
+#supportHero{
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportHero a{
+  color: white;
+}
+
+#supportWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+#supportHero input{
+  padding: 20px 50px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Remove blue hover/active effects from menu links */
+.menu-container a,
+.menu-container a.menu-link,
+.menu-container .menu-link,
+.menu-link,
+.menu-container li a {
+  text-decoration: none !important;
+  color: inherit !important;
+  background-color: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.menu-container a:hover,
+.menu-container a.menu-link:hover,
+.menu-container .menu-link:hover,
+.menu-link:hover,
+.menu-container li a:hover {
+  color: inherit !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
+
+.menu-container a:active,
+.menu-container a.menu-link:active,
+.menu-container .menu-link:active,
+.menu-link:active,
+.menu-container li a:active {
+  color: inherit !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
+
+.menu-container a:focus,
+.menu-container a.menu-link:focus,
+.menu-container .menu-link:focus,
+.menu-link:focus,
+.menu-container li a:focus {
+  color: inherit !important;
+  background-color: transparent !important;
+  outline: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+}
+
+.menu-container a:visited,
+.menu-container a.menu-link:visited,
+.menu-container .menu-link:visited,
+.menu-link:visited,
+.menu-container li a:visited {
+  color: inherit !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
+
+/* Also target any nested elements */
+.menu-container a p,
+.menu-link p,
+.menu-link p:hover,
+.menu-link p:active,
+.menu-link p:focus {
+  color: inherit !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
