@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState } from "react";
 
 import BuyActionWindow from "./BuyActionWindow";
@@ -34,16 +35,35 @@ export const GeneralContextProvider = (props) => {
     setOrderMode("BUY");
   };
 
-  const addOrder = (order) => {
-    const newOrder = {
-      ...order,
-      id: Date.now(),
-      timestamp: new Date().toISOString(),
-      status: "COMPLETE",
-    };
-    setOrders((prev) => [newOrder, ...prev]);
-    return newOrder;
+  import config from '../config';
+
+const addOrder = async (order) => {
+  const newOrder = {
+    ...order,
+    id: Date.now(),
+    timestamp: new Date().toISOString(),
+    status: "COMPLETE",
   };
+  
+  // Save to backend
+  try {
+    const token = localStorage.getItem('token');
+    await fetch(`${config.API_URL}/newOrder`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(newOrder),
+      credentials: 'include'
+    });
+  } catch (error) {
+    console.error('Error saving order:', error);
+  }
+  
+  setOrders((prev) => [newOrder, ...prev]);
+  return newOrder;
+};
 
   const updateHoldings = (stockName, qty, price, mode) => {
     setHoldings((prev) => {
