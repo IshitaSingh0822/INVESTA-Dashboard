@@ -1,3 +1,4 @@
+import config from '../config';
 import React, { useState, useEffect } from "react";
 
 import { Link, useLocation } from "react-router-dom";
@@ -88,13 +89,11 @@ const Menu = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    // Dispatch custom event to notify other components
-    window.dispatchEvent(new Event("userDataUpdated"));
-    window.location.href = "http://localhost:3001/";
-  };
-
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  window.dispatchEvent(new Event("userDataUpdated"));
+  window.location.href = config.FRONTEND_URL;
+};
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
